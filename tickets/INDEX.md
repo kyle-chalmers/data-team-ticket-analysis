@@ -4,16 +4,17 @@
 
 # Ticket Index
 
-**10 tickets** · Done 1 · To Do 9
+**11 tickets** · Done 1 · To Do 10
 
-By owner: kyle 10
+By owner: kyle 11
 
-Status: read from the tracker for 10 of 10 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
+Status: read from the tracker for 11 of 11 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
 
 > **For the agent:** this is the catalog of all prior ticket work in this repo. Before starting a ticket, grep here for earlier work on the same object / stakeholder / report — reuse it. `Refs` links related tickets. `⚠` = README changed since the summary was written; `▱` = summary auto-derived, not yet curated.
 
 | Ticket | Date | Status | Summary | Tags | Refs | Owner |
 |---|---|---|---|---|---|---|
+| [DATA-11](kyle/DATA-11/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-11) | 2026-10-28 | To Do | **Orders per clerk for 1995** — Top 20 of 1,000 clerks by 1995 orders: Clerk#000000185 leads with 277; the top 20 handled 5,255 of 228,637 orders (2.3%); no tie at the cut-off (258 vs 257). | `tpch` `orders` `clerks` `top-n` | — | kyle |
 | [DATA-10](kyle/DATA-10/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-10) | 2026-10-28 | To Do | **Discount impact on 1996 revenue** — 1996 line items by ship date: gross 34.97B, discounts 1.75B (5.00%), discounted 33.22B before tax across 913,487 items; identity reconciled to the cent. | `tpch` `lineitem` `revenue` `discounts` | — | kyle |
 | [DATA-9](kyle/DATA-9/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-9) | 2026-10-28 | To Do | **Customer count by nation** — Counted all 150,000 customers across the 25 nations: each holds about 4%, INDONESIA most (6,161) and SAUDI ARABIA fewest (5,904); no orphan nation keys. | `tpch` `customers` `nation-breakdown` | — | kyle |
 | [DATA-8](kyle/DATA-8/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-8) | 2026-10-28 | To Do | **Returned items by ship mode** — Returned line items (flag R) by ship mode: 1,478,870 of 6.0M (24.64%), RAIL most (211,640) and TRUCK least (210,876); modes within 0.1 point, about half of returnable items came back. | `tpch` `lineitem` `shipping` `returns` | — | kyle |
