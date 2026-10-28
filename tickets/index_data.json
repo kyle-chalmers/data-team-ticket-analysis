@@ -2,6 +2,31 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-9",
+      "owner": "kyle",
+      "title": "Customer count by nation",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "customers",
+        "nation-breakdown"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER",
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION"
+      ],
+      "summary": "Counted all 150,000 customers across the 25 nations: each holds about 4%, INDONESIA most (6,161) and SAUDI ARABIA fewest (5,904); no orphan nation keys.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "9535799c3d129f2b8a3ea9b78d0a6965ac3dc1ed8542b2bf392c6a736b060b90",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-9",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-8",
       "owner": "kyle",
       "title": "Returned items by ship mode",
