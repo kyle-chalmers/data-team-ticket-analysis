@@ -2,6 +2,41 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-12",
+      "owner": "leslie",
+      "title": "Europe inventory value by part type",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [
+        "DATA-1"
+      ],
+      "tags": [
+        "tpch",
+        "inventory-value",
+        "part-type",
+        "europe"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION",
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PART",
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP",
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION",
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.SUPPLIER"
+      ],
+      "summary": "Top 15 of 150 part types by Europe supplier inventory value: STANDARD ANODIZED TIN 2.99B highest; top 15 hold 43.7B (11.0%) of Europe's 397.9B, reconciled to DATA-1 to the cent.",
+      "confidence": "high",
+      "readme_present": true,
+      "readme_hash": "0e3e06643564074d060c03bf4d59a1f69983db60d4b501b5e980f43630fa8521",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-12",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do",
+      "planned_status": "Done",
+      "planned_status_on": "2026-10-28",
+      "readme_status_before": "To Do",
+      "readme_status_set": "Done"
+    },
+    {
       "id": "DATA-11",
       "owner": "kyle",
       "title": "Orders per clerk for 1995",
