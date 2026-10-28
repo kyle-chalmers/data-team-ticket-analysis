@@ -8,14 +8,13 @@
 
 By owner: kyle 10
 
-Coverage: 1 not yet enriched (▱). Run /refresh index to update.
-
-Status: read from the tracker for 9 of 10 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
+Status: read from the tracker for 10 of 10 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
 
 > **For the agent:** this is the catalog of all prior ticket work in this repo. Before starting a ticket, grep here for earlier work on the same object / stakeholder / report — reuse it. `Refs` links related tickets. `⚠` = README changed since the summary was written; `▱` = summary auto-derived, not yet curated.
 
 | Ticket | Date | Status | Summary | Tags | Refs | Owner |
 |---|---|---|---|---|---|---|
+| [DATA-10](kyle/DATA-10/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-10) | 2026-10-28 | To Do | **Discount impact on 1996 revenue** — 1996 line items by ship date: gross 34.97B, discounts 1.75B (5.00%), discounted 33.22B before tax across 913,487 items; identity reconciled to the cent. | `tpch` `lineitem` `revenue` `discounts` | — | kyle |
 | [DATA-9](kyle/DATA-9/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-9) | 2026-10-28 | To Do | **Customer count by nation** — Counted all 150,000 customers across the 25 nations: each holds about 4%, INDONESIA most (6,161) and SAUDI ARABIA fewest (5,904); no orphan nation keys. | `tpch` `customers` `nation-breakdown` | — | kyle |
 | [DATA-8](kyle/DATA-8/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-8) | 2026-10-28 | To Do | **Returned items by ship mode** — Returned line items (flag R) by ship mode: 1,478,870 of 6.0M (24.64%), RAIL most (211,640) and TRUCK least (210,876); modes within 0.1 point, about half of returnable items came back. | `tpch` `lineitem` `shipping` `returns` | — | kyle |
 | [DATA-7](kyle/DATA-7/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-7) | 2026-10-28 | To Do | **Late shipments by ship mode** — Share of 6.0M line items received after commit date, by ship mode: 63.21% overall; all 7 modes within 0.17 points (MAIL 63.33% to RAIL 63.16%), so no mode stands out. | `tpch` `lineitem` `shipping` `on-time-delivery` | — | kyle |
@@ -25,4 +24,3 @@ Status: read from the tracker for 9 of 10 tickets, oldest read 2026-10-28. The r
 | [DATA-3](kyle/DATA-3/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-3) | 2026-10-28 | To Do | **Monthly order revenue for 1997** — 1997 order revenue (O_TOTALPRICE) by month: 34.37B across 227,783 orders, May highest (2.95B), Feb lowest (2.67B); reconciled to the whole-year total to the cent. | `tpch` `orders` `revenue` `monthly-trend` | — | kyle |
 | [DATA-2](kyle/DATA-2/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-2) | 2026-10-28 | To Do | **Order count by order status** — Counted all 1.5M orders by status: Open 732,044 (48.80%), Fulfilled 729,413 (48.63%), Partially shipped 38,543 (2.57%); counts reconcile to ORDERS. | `tpch` `orders` `status-breakdown` | — | kyle |
 | [DATA-1](kyle/DATA-1/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-1) | 2026-10-27 | Done | **Inventory value by supplier region** — Ranked all 5 regions by supplier inventory value (avail qty x supply cost): America 407.9B highest, Africa 392.1B lowest; total 2.004T, reconciled to the cent. | `tpch` `inventory-value` `region-rollup` | — | kyle |
-| [DATA-10](kyle/DATA-10/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-10) ▱ | — | To Do | **Discount impact on 1996 revenue** — Gross versus discounted line item revenue for 1996 from SNOWFLAKESAMPLEDATA.TPCHSF1.LINEITEM. | — | — | kyle |

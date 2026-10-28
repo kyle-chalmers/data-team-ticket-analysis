@@ -2,6 +2,31 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-10",
+      "owner": "kyle",
+      "title": "Discount impact on 1996 revenue",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "lineitem",
+        "revenue",
+        "discounts"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.LINEITEM"
+      ],
+      "summary": "1996 line items by ship date: gross 34.97B, discounts 1.75B (5.00%), discounted 33.22B before tax across 913,487 items; identity reconciled to the cent.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "d04e72fef4ecffb568b6c9b674323009372babf9e440f0ee9556b4e8d1162858",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-10",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-9",
       "owner": "kyle",
       "title": "Customer count by nation",

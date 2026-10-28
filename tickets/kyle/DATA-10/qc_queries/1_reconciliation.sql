@@ -21,4 +21,5 @@ UNION ALL SELECT 'no NULL price or discount', 0, t.n_null, t.n_null = 0 FROM t
 UNION ALL SELECT 'discounts within 0 to 0.10', 0, t.n_out_of_range, t.n_out_of_range = 0 FROM t
 UNION ALL SELECT 'window covers 1996-01-01 to 1996-12-31', 0, DATEDIFF('day', '1996-01-01'::DATE, t.first_ship) + DATEDIFF('day', t.last_ship, '1996-12-31'::DATE), t.first_ship = '1996-01-01'::DATE AND t.last_ship = '1996-12-31'::DATE FROM t
 UNION ALL SELECT 'info: line items in 1996 by order date instead', NULL, (SELECT COUNT(*) FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.LINEITEM l JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS o ON o.O_ORDERKEY = l.L_ORDERKEY WHERE YEAR(o.O_ORDERDATE) = 1996), NULL FROM t
+UNION ALL SELECT 'info: order-date gross minus ship-date gross (net shift)', NULL, (SELECT ROUND(SUM(l.L_EXTENDEDPRICE), 2) FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.LINEITEM l JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS o ON o.O_ORDERKEY = l.L_ORDERKEY WHERE YEAR(o.O_ORDERDATE) = 1996) - t.gross, NULL FROM t
 ORDER BY check_name;

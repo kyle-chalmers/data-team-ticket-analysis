@@ -25,7 +25,7 @@ subagent_isolation: documented (not used: plan needs no spec)
 2. **Scope/Time Window**: a line item is in 1996 when its `L_SHIPDATE` is in 1996 (1996-01-01 inclusive to 1997-01-01 exclusive).
    - **Reasoning**: the usual TPC-H convention for line-item revenue; chosen during scoping.
    - **Context**: by order date the year would hold 915,491 items instead of 913,487.
-   - **Impact**: the order-date view would move about 2,000 items and about 62M of gross revenue.
+   - **Impact**: the order-date view would add a net 2,004 items and 62,114,719.70 of gross revenue (about 151,000 items leave the year and about 153,000 join it).
 3. **Output Format**: one summary row: `ship_year, line_items, gross_revenue, discount_amount, discounted_revenue, discount_pct_of_gross`, 2 decimals. Totals are summed unrounded and rounded once. The header is lowercased after export.
    - **Reasoning**: the ticket asks for one comparison for the year.
    - **Context**: TPCH has no currency field.
@@ -54,5 +54,7 @@ Build-time checks ([qc_queries/1_reconciliation.sql](qc_queries/1_reconciliation
 - Gross minus discount equals discounted revenue, to the cent; a second computation agrees within 0.01.
 - 913,487 line items, grain unique in the year; ship dates run 1996-01-01 to 1996-12-31.
 - No NULL price or discount; all discounts within 0 to 0.10.
-- Info: 915,491 items fall in 1996 by order date.
+- Info: 915,491 items fall in 1996 by order date, a net 62,114,719.70 more gross revenue.
 - CSV re-read: 1 data row, header row 1, ASCII only.
+
+Review verdict: APPROVE ([qc_queries/2_review_verdict.md](qc_queries/2_review_verdict.md)); independent-subagent review, sign-off by Kyle Chalmers through the batch pre-approval on 2026-10-28.
