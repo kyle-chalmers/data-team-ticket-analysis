@@ -2,6 +2,31 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-11",
+      "owner": "kyle",
+      "title": "Orders per clerk for 1995",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "orders",
+        "clerks",
+        "top-n"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS"
+      ],
+      "summary": "Top 20 of 1,000 clerks by 1995 orders: Clerk#000000185 leads with 277; the top 20 handled 5,255 of 228,637 orders (2.3%); no tie at the cut-off (258 vs 257).",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "ad7d099d723ef72e678baaf51544130068c36422c23356b868b2338b3101b4b1",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-11",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-10",
       "owner": "kyle",
       "title": "Discount impact on 1996 revenue",
