@@ -4,11 +4,13 @@
 
 # Ticket Index
 
-**9 tickets** · Done 1 · To Do 8
+**10 tickets** · Done 1 · To Do 9
 
-By owner: kyle 9
+By owner: kyle 10
 
-Status: read from the tracker for 9 of 9 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
+Coverage: 1 not yet enriched (▱). Run /refresh index to update.
+
+Status: read from the tracker for 9 of 10 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
 
 > **For the agent:** this is the catalog of all prior ticket work in this repo. Before starting a ticket, grep here for earlier work on the same object / stakeholder / report — reuse it. `Refs` links related tickets. `⚠` = README changed since the summary was written; `▱` = summary auto-derived, not yet curated.
 
@@ -23,3 +25,4 @@ Status: read from the tracker for 9 of 9 tickets, oldest read 2026-10-28. The re
 | [DATA-3](kyle/DATA-3/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-3) | 2026-10-28 | To Do | **Monthly order revenue for 1997** — 1997 order revenue (O_TOTALPRICE) by month: 34.37B across 227,783 orders, May highest (2.95B), Feb lowest (2.67B); reconciled to the whole-year total to the cent. | `tpch` `orders` `revenue` `monthly-trend` | — | kyle |
 | [DATA-2](kyle/DATA-2/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-2) | 2026-10-28 | To Do | **Order count by order status** — Counted all 1.5M orders by status: Open 732,044 (48.80%), Fulfilled 729,413 (48.63%), Partially shipped 38,543 (2.57%); counts reconcile to ORDERS. | `tpch` `orders` `status-breakdown` | — | kyle |
 | [DATA-1](kyle/DATA-1/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-1) | 2026-10-27 | Done | **Inventory value by supplier region** — Ranked all 5 regions by supplier inventory value (avail qty x supply cost): America 407.9B highest, Africa 392.1B lowest; total 2.004T, reconciled to the cent. | `tpch` `inventory-value` `region-rollup` | — | kyle |
+| [DATA-10](kyle/DATA-10/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-10) ▱ | — | To Do | **Discount impact on 1996 revenue** — Gross versus discounted line item revenue for 1996 from SNOWFLAKESAMPLEDATA.TPCHSF1.LINEITEM. | — | — | kyle |
