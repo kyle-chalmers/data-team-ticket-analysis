@@ -3,7 +3,7 @@
 ## Ticket Information
 - **Link:** https://kclabs.atlassian.net/browse/DATA-8
 - **Type:** Task
-- **Status:** To Do
+- **Status:** Done
 - **Epic/Parent:** none
 - **Assignee:** Kyle Chalmers
 - **Warehouse target(s):** SNOWFLAKE_SAMPLE_DATA.TPCH_SF1 (read-only)

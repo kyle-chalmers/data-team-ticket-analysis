@@ -1,6 +1,6 @@
 # DATA-5: Customer count by market segment
 
-`kyle` · To Do · 2026-10-28
+`kyle` · Done · 2026-10-28
 
 - **Objects:** [`SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER`](../objects/SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER.md), [`SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS`](../objects/SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS.md)
 - **Full ticket →** [README](../kyle/DATA-5/README.md)

@@ -2,3 +2,7 @@ schema_version: 1
 chat:
   none: true
   reason: "Off-camera history batch: no chat or email message (Kyle's instruction)."
+delivered:
+  - file: "final_deliverables/1_orders_per_clerk_1995_20_records.csv"
+    docstore_target: null
+    url: "https://drive.google.com/file/d/19FQn9KeG_oRPUmlmJI4irCqaYdr8q2_H"

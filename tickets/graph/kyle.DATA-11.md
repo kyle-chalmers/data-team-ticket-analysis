@@ -1,6 +1,6 @@
 # DATA-11: Orders per clerk for 1995
 
-`kyle` · To Do · 2026-10-28
+`kyle` · Done · 2026-10-28
 
 - **Objects:** [`SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS`](../objects/SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS.md)
 - **Full ticket →** [README](../kyle/DATA-11/README.md)
