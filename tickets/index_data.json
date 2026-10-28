@@ -23,7 +23,10 @@
       "confidence": "medium",
       "readme_present": true,
       "readme_hash": "75904ebe863530138d06a973f8815fcf328f9b146f64bb8fa33168733c72cd17",
-      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-1"
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-1",
+      "tracker_status": "Done",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
     }
   ]
 }
