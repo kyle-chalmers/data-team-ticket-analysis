@@ -1,4 +1,7 @@
 {
+  "enabledPlugins": {
+    "ticketwright@ticketwright": true
+  },
   "extraKnownMarketplaces": {
     "ticketwright": {
       "source": {
@@ -6,8 +9,5 @@
         "url": "https://github.com/kyle-chalmers/ticketwright.git"
       }
     }
-  },
-  "enabledPlugins": {
-    "ticketwright@ticketwright": true
   }
 }
