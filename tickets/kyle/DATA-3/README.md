@@ -20,7 +20,7 @@ subagent_isolation: documented (not used: plan needs no spec)
 ## Assumptions Made
 1. **Business Definition**: order revenue = `SUM(O_TOTALPRICE)`, the order total as stored.
    - **Reasoning**: the ticket names `O_TOTALPRICE`.
-   - **Context**: TPC-H builds `O_TOTALPRICE` from the order's line items with discount and tax applied; no NULL or non-positive values exist in 1997.
+   - **Context**: TPC-H builds `O_TOTALPRICE` from the order's line items with discount and tax applied (it matches the line-item total to rounding: about 7,796 apart over the whole year); no NULL or non-positive values exist in 1997.
    - **Impact**: this is gross order value at order time, not net of returns.
 2. **Scope/Time Window**: an order belongs to the month of its `O_ORDERDATE`; the window is 1997-01-01 (inclusive) to 1998-01-01 (exclusive).
    - **Reasoning**: `O_ORDERDATE` is the only date on `ORDERS`; chosen during scoping.
@@ -62,3 +62,5 @@ Build-time checks ([qc_queries/1_reconciliation.sql](qc_queries/1_reconciliation
 - Monthly revenue sums to 34,373,633,413.04 = independent whole-year sum, to the cent.
 - 12 output months, no duplicates; no NULL or non-positive `O_TOTALPRICE`.
 - CSV re-read after export: 12 data rows, header row 1, ASCII only.
+
+Review verdict: APPROVE ([qc_queries/2_review_verdict.md](qc_queries/2_review_verdict.md)); independent-subagent review, sign-off by Kyle Chalmers through the batch pre-approval on 2026-10-28.
