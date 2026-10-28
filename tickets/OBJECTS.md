@@ -4,7 +4,7 @@
 
 # Object Index
 
-**6 data objects** referenced across the ticket archive (2 shared by >1 ticket) — the reverse of `INDEX.md`.
+**7 data objects** referenced across the ticket archive (2 shared by >1 ticket) — the reverse of `INDEX.md`.
 
 > **For the agent:** before changing a view/table, grep here for every ticket that read or wrote it.
 
@@ -12,6 +12,7 @@
 |---|---|
 | `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS` | [DATA-2](kyle/DATA-2/README.md), [DATA-3](kyle/DATA-3/README.md), [DATA-4](kyle/DATA-4/README.md), [DATA-5](kyle/DATA-5/README.md), [DATA-6](kyle/DATA-6/README.md) (5) |
 | `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER` | [DATA-4](kyle/DATA-4/README.md), [DATA-5](kyle/DATA-5/README.md) (2) |
+| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.LINEITEM` | [DATA-7](kyle/DATA-7/README.md) (1) |
 | `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION` | [DATA-1](kyle/DATA-1/README.md) (1) |
 | `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP` | [DATA-1](kyle/DATA-1/README.md) (1) |
 | `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION` | [DATA-1](kyle/DATA-1/README.md) (1) |
