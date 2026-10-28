@@ -1,0 +1,4 @@
+order_status,status_meaning,order_count,pct_of_orders
+O,Open,732044,48.80
+F,Fulfilled,729413,48.63
+P,Partially shipped,38543,2.57
