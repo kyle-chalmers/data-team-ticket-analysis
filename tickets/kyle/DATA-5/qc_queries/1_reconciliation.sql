@@ -15,5 +15,5 @@ UNION ALL SELECT 'C_CUSTKEY unique (row = customer)', s.n, s.d, s.n = s.d FROM s
 UNION ALL SELECT 'output rows = distinct segments (no duplicates)', s.n_seg, (SELECT COUNT(*) FROM out), s.n_seg = (SELECT COUNT(*) FROM out) FROM src s
 UNION ALL SELECT 'no NULL segment', 0, s.n_null, s.n_null = 0 FROM src s
 UNION ALL SELECT 'shares sum to 100 within 0.01', 100, (SELECT SUM(pct_of_customers) FROM out), ABS((SELECT SUM(pct_of_customers) FROM out) - 100) <= 0.01 FROM src s
-UNION ALL SELECT 'info: customers with no orders', NULL, (SELECT COUNT(*) FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER c WHERE NOT EXISTS (SELECT 1 FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS o WHERE o.O_CUSTKEY = c.C_CUSTKEY)), TRUE FROM src s
+UNION ALL SELECT 'info: customers with no orders', NULL, (SELECT COUNT(*) FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER c WHERE NOT EXISTS (SELECT 1 FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS o WHERE o.O_CUSTKEY = c.C_CUSTKEY)), NULL FROM src s
 ORDER BY check_name;
