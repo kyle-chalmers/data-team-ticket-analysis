@@ -8,10 +8,8 @@
 
 By owner: kyle 1
 
-Coverage: 1 not yet enriched (▱). Run /refresh index to update.
-
 > **For the agent:** this is the catalog of all prior ticket work in this repo. Before starting a ticket, grep here for earlier work on the same object / stakeholder / report — reuse it. `Refs` links related tickets. `⚠` = README changed since the summary was written; `▱` = summary auto-derived, not yet curated.
 
 | Ticket | Date | Status | Summary | Tags | Refs | Owner |
 |---|---|---|---|---|---|---|
-| [DATA-1](kyle/DATA-1/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-1) ▱ | — | To Do | **Inventory value by supplier region** — Which regions hold the most supplier inventory value? I want to see a complete list of the regions ordered from the highest value to the lowest value. | — | — | kyle |
+| [DATA-1](kyle/DATA-1/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-1) | 2026-10-27 | To Do | **Inventory value by supplier region** — Ranked all 5 regions by supplier inventory value (avail qty x supply cost): America 407.9B highest, Africa 392.1B lowest; total 2.004T, reconciled to the cent. | `tpch` `inventory-value` `region-rollup` | — | kyle |
