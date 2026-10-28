@@ -19,5 +19,5 @@ UNION ALL SELECT 'no NULL or unmatched C_NATIONKEY', 0, c.n_null + c.n_unmatched
 UNION ALL SELECT 'N_NATIONKEY and N_NAME unique (join cannot fan out)', n.n, LEAST(n.d, n.d_name), n.n = n.d AND n.n = n.d_name FROM nat n
 UNION ALL SELECT 'output rows = NATION rows', n.n, (SELECT COUNT(*) FROM out), n.n = (SELECT COUNT(*) FROM out) FROM nat n
 UNION ALL SELECT 'shares sum to 100 within rounding (0.005 per row)', 100, (SELECT SUM(pct_of_customers) FROM out), ABS((SELECT SUM(pct_of_customers) FROM out) - 100) <= 0.005 * (SELECT COUNT(*) FROM out) FROM nat n
-UNION ALL SELECT 'unrounded shares sum to 100', 100, (SELECT ROUND(SUM(100 * customer_count / (SELECT SUM(customer_count) FROM out)), 6) FROM out), (SELECT ROUND(SUM(100 * customer_count / (SELECT SUM(customer_count) FROM out)), 6) FROM out) = 100 FROM nat n
+UNION ALL SELECT 'unrounded shares sum to 100 within 0.0001 (division precision)', 100, (SELECT ROUND(SUM(100 * customer_count / (SELECT SUM(customer_count) FROM out)), 6) FROM out), ABS((SELECT SUM(100 * customer_count / (SELECT SUM(customer_count) FROM out)) FROM out) - 100) < 0.0001 FROM nat n
 ORDER BY check_name;

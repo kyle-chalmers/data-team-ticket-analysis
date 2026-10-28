@@ -29,7 +29,7 @@ subagent_isolation: documented (not used: plan needs no spec)
 3. **Output Format**: CSV columns `nation_name, customer_count, pct_of_customers`; share to 2 decimals; most customers first, ties by nation name (FRANCE and ROMANIA at 6,100; ARGENTINA and PERU at 5,975). The header is lowercased after export.
    - **Reasoning**: chosen during scoping (name only, no region).
    - **Context**: the rounded shares add to 100.03, not 100.00: each of 25 rows rounds by up to 0.005.
-   - **Impact**: none on the counts. The plan's 0.01 tolerance on the share sum was too tight for 25 rows; the QC now allows 0.005 per row and also checks that the unrounded shares sum to exactly 100.
+   - **Impact**: none on the counts. The plan's 0.01 tolerance on the share sum was too tight for 25 rows; the QC now allows 0.005 per row and also checks that the unrounded shares sum to 100 (within 0.0001, the division precision).
 
 ## Deliverables
 1. [final_deliverables/1_customer_count_by_nation_25_records.csv](final_deliverables/1_customer_count_by_nation_25_records.csv) - customer count and share per nation. Warehouse target: `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1` (read-only).
@@ -74,5 +74,5 @@ Build-time checks ([qc_queries/1_reconciliation.sql](qc_queries/1_reconciliation
 - Nation counts sum to 150,000 = `CUSTOMER` rows; `C_CUSTKEY` unique.
 - No NULL or unmatched `C_NATIONKEY`; `N_NATIONKEY` and `N_NAME` unique, so the join cannot fan out.
 - 25 output rows = 25 `NATION` rows.
-- Rounded shares sum to 100.03 (within the 0.125 rounding bound for 25 rows); unrounded shares sum to exactly 100.
+- Rounded shares sum to 100.03 (within the 0.125 rounding bound for 25 rows); unrounded shares sum to 100 within 0.0001.
 - CSV re-read: 25 data rows, header row 1, ASCII only.
