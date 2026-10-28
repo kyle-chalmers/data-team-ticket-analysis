@@ -1,0 +1,76 @@
+# .gitignore — rendered into a ticket-work repo by /setup (from templates/gitignore.tmpl).
+# Edit the kit template, not this file, if you want the change to propagate to other repos.
+
+# ── Ticket deliverables (CSV/TSV/XLSX/Parquet) ARE committed by default ──
+# Results live with the ticket and show up in the PR for review. To keep a specific export OUT of git
+# (customer data / PII), either name it `*.private.csv` (`.tsv`/`.xlsx`/`.parquet`) OR drop it in a
+# `private/` subfolder of the ticket's final_deliverables — both are ignored at any depth (rules below).
+# Deliverable SQL, QC SQL, and READMEs are always committed (reviewable artifacts).
+#   Prefer the strict "no deliverable ever committed → docstore only" default? Uncomment these four:
+#   # **/final_deliverables/*.csv
+#   # **/final_deliverables/*.tsv
+#   # **/final_deliverables/*.xlsx
+#   # **/final_deliverables/*.parquet
+**/*.private.csv
+**/*.private.tsv
+**/*.private.xlsx
+**/*.private.parquet
+**/final_deliverables/**/private/
+
+# ── The Obsidian graph layer (tickets/graph/, tickets/objects/) is generated + committed by default,
+# shared with the team like INDEX.md/OBJECTS.md. To keep it out of git, uncomment:
+#   # tickets/graph/
+#   # tickets/objects/
+
+# ── Obsidian vault config. The graph-view config (.obsidian/graph.json — auto-written by the graph
+# layer with the tickets↔objects filter + color groups) is committed so the graph looks right for the
+# whole team; per-user session state is not.
+.obsidian/workspace.json
+.obsidian/workspace-*.json
+.obsidian/workspace.json.bak
+.obsidian/cache
+
+# ── Source material: raw meeting transcripts stay OUT of git by default ──
+# Curated excerpts are committed; raw full transcripts are not. The patterns below are ACTIVE, not
+# a suggestion — a meeting transcript is the most PII-dense artifact a ticket folder holds. Note
+# that the CSV-family rules above do NOT cover markdown, which is the format notetakers export.
+# The committed, curated form is `YYYY-MM-DD-<slug>-meeting.md`: trim to decisions and action
+# items, name it that way, and it commits normally.
+# To track a raw file anyway: `git add -f <path>` plus an explicit approval. The kit's
+# source_material_guard hook asks first either way, and it also catches a transcript whose
+# filename gives nothing away (`notes.md`) — which no gitignore pattern can.
+**/source_materials/*transcript*
+**/source_materials/private/
+# Downloaded attachments are inputs you didn't author and often carry PII — keep them local.
+# Uncomment to ignore ALL of them, not just transcripts (you can still `git add -f` one you mean
+# to track):
+# **/source_materials/*
+# !**/source_materials/.gitkeep
+
+# ── Comms drafts (/ship writes draft-*.initial.md / draft-*.approved.md under a ticket's comms/) ──
+# Unsent/approved wording is working state for the voice-refine diff, not a deliverable — never in a PR.
+**/comms/
+
+# ── Per-user / per-install (never shared); the team-shared .claude/settings.json IS committed ──
+.claude/settings.local.json
+.claude/worktrees/
+# Which apps open your deliverables at a review gate is a personal choice, not a repo convention.
+.claude/config/*.local.yaml
+# The one-shot DB-write approval token (deny-with-escape on runtimes without an ask tier).
+# Consumed on use and expiring in minutes — but never committable: a committed token would be
+# a standing approval in the repo.
+.claude/config/approve.once
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# ── OS / editor ──
+.DS_Store
+*.swp
+*~
+.idea/
+*.iml

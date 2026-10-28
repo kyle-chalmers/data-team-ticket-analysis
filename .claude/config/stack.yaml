@@ -1,0 +1,108 @@
+# stack.yaml — the tool registry + project facts + policies (single source of truth).
+# Written by /ticketwright:setup. Field docs: stack.schema.md
+# Validate: bash bin/verify_stack.sh .claude/config/stack.yaml
+# TODO(setup): round 5 skipped — domain/team_docs at defaults; finish with /setup role
+
+project:
+  key_prefix: DATA                      # ticket-ID prefix; branch names = {key_prefix}-NNNN
+  key_prefixes: [DATA]
+  assignee_dir: kyle                    # last-resort owner subdir under tickets/ (a roster in people/ decides the owner day to day)
+  ticket_path: "tickets/{assignee}/{id}"
+  ticket_subdirs: [source_materials, final_deliverables, qc_queries, exploratory_analysis]
+  # default_epic: null                  # parent epic for new tickets; most trackers have none
+  terminal_status: Done                 # the workflow's "done" state
+  ticket_url_template: "https://kclabs.atlassian.net/browse/{id}"
+  intake: [tracker, email, meetings]    # work also arrives as email / meeting notes dropped into source_materials/
+  history_search: ask                   # /ticket may offer to search older Jira tickets in DATA when this repo has no match
+  # history_scope: OPS                  # unset = the project above
+  # history_before: "2024-03-01"        # unset = no cutoff (no commits yet, so no date was suggested)
+  # role: generalist                    # persona for AGENTS.md (set with /setup role)
+  # domain: data analysis               # short phrase for AGENTS.md (set with /setup role)
+  # team_docs:                          # optional docs the team already keeps; links are read live, never copied
+  #   standards: []                     # rules /build follows and /review checks
+  #   context: []                       # what /ticket reads while planning
+  word_limits: {tracker_comment: 100, chat: 100, pr: 200, ticket: 200}
+  graph_notes: true                     # Obsidian graph layer (tickets/graph + tickets/objects)
+  graph_config: true                    # also write .obsidian/graph.json (create/merge-only)
+
+seams:
+  tracker:
+    tool: jira
+    adapter: adapters/tracker/jira.md
+    transport: mcp                      # Jira through the Atlassian connector; acli (its command-line tool) isn't needed
+    site: kclabs.atlassian.net
+    mcp: 96e48f94-a1fc-4945-b736-93f1eb91b95d   # the Atlassian connector's tool prefix in Claude Code
+    verify: null                        # MCP-only: reachability is checked via an MCP call
+
+  warehouse:
+    tool: snowflake
+    adapter: adapters/warehouse/snowflake.md
+    transport: cli                      # no Snowflake connector is connected here
+    cli: snow
+    default_warehouse: COMPUTE_EXTRA_SMALL
+    # pii_role: <role>                  # role for PII queries; set when the team has one
+    dev_target: ANALYTICS_DEV           # test tables go here, never to real data
+    # the snow connection NAME is machine-local: see .claude/config/connections.local.yaml
+    verify: "snow connection test -c {connection}"
+
+  # chat — TOOL-ONLY targets: no standing destination. Where a result goes and who it is for is
+  # chosen per ticket (delivery-plan.yaml), asked at /ship. Drafts only: nothing sends until you say send.
+  chat:
+    default: slack
+    default_mode: draft
+    targets:
+      slack:
+        audience: slack
+        tool: slack
+        adapter: adapters/chat/slack.md
+        transport: mcp
+        mcp: 719db183-3ece-4f62-9fb4-183b9d1b5b51   # the Slack connector's tool prefix in Claude Code
+        destination: per_ticket
+        verify: null
+      email:
+        audience: email
+        tool: gmail
+        adapter: adapters/chat/gmail.md
+        transport: mcp
+        mcp: f80ec204-51a8-47c1-b094-a9a71c473a62   # the Gmail connector's tool prefix in Claude Code
+        identity: kclabs.fileshare@gmail.com         # drafts come from this mailbox
+        destination: per_ticket
+        default_mode: draft                         # an email cannot be unsent: the human clicks send
+        verify: null
+
+  docstore:
+    tool: gdrive
+    adapter: adapters/docstore/gdrive.md
+    transport: cli
+    drive_folder: "Shared drives/Team Drive/Data Team Tickets"   # WHICH folder (team decision); WHERE it is mounted is per-machine (connections.local.yaml)
+    verify: "test -d \"{base_path}\""
+
+  meetings:
+    tool: notion
+    adapter: adapters/meetings/notion.md
+    transport: mcp
+    mcp: 3d8bc06d-6ace-4596-9d7d-2ce8554fb08c       # the Notion connector's tool prefix in Claude Code
+    verify: null
+
+  vcs:
+    tool: github
+    adapter: adapters/vcs/github.md
+    transport: cli
+    default_branch: main
+    semantic_pr: true
+    worktree_root: ".claude/worktrees"
+    verify: "gh auth status"
+
+policies:
+  hard_halt_before_external_posts: true
+  db_write_requires_approval: high_risk   # off | high_risk | all — asked before risky warehouse changes (chosen in setup)
+  # source_material_guard: on            # on (default) | off — ask before a raw meeting transcript is committed or copied
+  human_review_handoff: review            # off | review | all — files open for sign-off at /review only (chosen in setup)
+  chat_default_draft: true
+  ship_merges_pr: true                    # /ship asks, then squash-merges the PR (chosen in setup); false = merge by hand
+  hyperlink_everything: true
+  skillify_everything: true
+  reduce_assumptions: true
+  commit_plan_before_implement: true
+  system_evolution: true
+  deterministic_outputs: true

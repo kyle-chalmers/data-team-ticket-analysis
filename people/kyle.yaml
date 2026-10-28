@@ -1,0 +1,11 @@
+# people/kyle.yaml — TIER 2: person-scoped, PORTABLE, and committed.
+# Machine-specific values (connection names, mount points) live in .claude/config/connections.local.yaml.
+
+display_name: Kyle Chalmers
+
+# Every local identity that should resolve to this person, ENUMERATED. Matching is exact, after
+# trimming and case-folding. (No email is listed: this repo's remote is on a public code host.)
+identities:
+  - Kyle Chalmers
+  - kylechalmers
+  - kyle

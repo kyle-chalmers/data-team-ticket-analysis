@@ -1,0 +1,38 @@
+# data-team-ticket-analysis
+
+This is a **ticket-driven work repo** for data analysis. Work arrives as **tickets**, and each ticket
+lives in its own folder alongside the request, the assumptions made, the queries or steps taken,
+the finished deliverable, and how it was checked — so the reasoning behind a result is written
+down, not carried in someone's head or a chat thread.
+
+The point: **someone can pick up a past piece of work and understand it** — a teammate on their
+first day, or an AI assistant tracing how a result was produced.
+
+## How work moves here
+
+| Stage | What happens |
+|---|---|
+| **Open** | Start or resume a ticket; its context and related past work load automatically. |
+| **Spec** | Write down what's being asked, and the plan, before touching data. |
+| **Build** | Do the work, recording assumptions and keeping the queries as you go. |
+| **Review** | The results are re-checked — and how they were checked is recorded — before anything leaves the repo. |
+| **Ship** | Deliver the result and file it so the next person finds it. |
+
+## The commands
+
+| Command | What it does |
+|---|---|
+| `/ticket <id>` | Open or resume a ticket. Loads its context and related past work. Start here. |
+| `/build` | Build what the approved plan says, then re-check it before it moves on. |
+| `/review` | Re-check the results independently and record how they were checked. |
+| `/ship` | Deliver the result, file it, and open it for review. Stops for your go-ahead first. |
+| `/setup` | Set the repo up, add a tool later, or get yourself set up as a new teammate. |
+| `/refresh` | Rebuild the ticket catalog or the background knowledge. Usually automatic. |
+| `/skillify` | Turn work you repeat into a skill of its own. |
+
+Installed as a plugin, these are prefixed — `/ticketwright:ticket`.
+
+## Starting out
+
+Read **`AGENTS.md`** — the working rules that guide both people and AI here — then open a recent
+ticket folder to see what "finished" looks like before starting new work.

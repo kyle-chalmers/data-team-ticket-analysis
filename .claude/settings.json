@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "ticketwright": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/kyle-chalmers/ticketwright.git"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "ticketwright@ticketwright": true
+  }
+}
