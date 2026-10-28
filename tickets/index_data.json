@@ -2,6 +2,30 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-2",
+      "owner": "kyle",
+      "title": "Order count by order status",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "orders",
+        "status-breakdown"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS"
+      ],
+      "summary": "Counted all 1.5M orders by status: Open 732,044 (48.80%), Fulfilled 729,413 (48.63%), Partially shipped 38,543 (2.57%); counts reconcile to ORDERS.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "d2351c8ed378a2768af47e422d7faf0e30e8dd3307497a8e8084896e7fe1d6e0",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-2",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-1",
       "owner": "kyle",
       "title": "Inventory value by supplier region",

@@ -12,7 +12,7 @@
 How many orders are in each order status? Use SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS.
 
 ## Investigation Scope
-Count orders per order status. Object (read-only): `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS` (1,500,000 rows, one per `O_ORDERKEY`). No prior tickets to reuse (recall found no match; kyle/DATA-1 reads other tables). See [plan.md](plan.md).
+Count orders per order status. Object (read-only): `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS` (1,500,000 rows, one per `O_ORDERKEY`). No prior tickets to reuse (recall found no match on `ORDERS`). See [plan.md](plan.md).
 
 build_mode: inline
 subagent_isolation: documented (not used: plan needs no spec)
@@ -58,3 +58,5 @@ Build-time checks ([qc_queries/1_reconciliation.sql](qc_queries/1_reconciliation
 - 3 output rows = 3 distinct statuses; no duplicates, no NULL status.
 - Shares sum to 100.00.
 - CSV re-read after export: 3 data rows, header row 1, ASCII only.
+
+Review verdict: APPROVE ([qc_queries/2_review_verdict.md](qc_queries/2_review_verdict.md)); independent-subagent review, sign-off by Kyle Chalmers through the batch pre-approval on 2026-10-28.
