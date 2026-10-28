@@ -1,0 +1,4 @@
+schema_version: 1
+chat:
+  none: true
+  reason: "Off-camera history batch: no chat or email message (Kyle's instruction)."

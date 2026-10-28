@@ -2,6 +2,30 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-5",
+      "owner": "kyle",
+      "title": "Customer count by market segment",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "customers",
+        "segment-breakdown"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER"
+      ],
+      "summary": "Counted all 150,000 customers by market segment: a near-even split, HOUSEHOLD largest (30,189, 20.13%) and AUTOMOBILE smallest (29,752, 19.83%); 50,004 have no orders.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "aaad9eaf6796dd44dca6e7d7d877492223273df90503afd176229d0d693261fd",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-5",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-4",
       "owner": "kyle",
       "title": "Top 10 customers by order revenue",
