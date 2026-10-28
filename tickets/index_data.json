@@ -22,11 +22,11 @@
       "summary": "Ranked all 5 regions by supplier inventory value (avail qty x supply cost): America 407.9B highest, Africa 392.1B lowest; total 2.004T, reconciled to the cent.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "75904ebe863530138d06a973f8815fcf328f9b146f64bb8fa33168733c72cd17",
+      "readme_hash": "85088ae90f580af7dabaa24f43c8772c2c47415db091c55ac0e8e32581d320f7",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-1",
       "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     }
   ]
 }
