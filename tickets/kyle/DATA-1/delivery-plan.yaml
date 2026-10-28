@@ -1,0 +1,8 @@
+schema_version: 1
+audience: slack
+chat:
+  target: slack
+  channel: "Kyle Chalmers"
+  kind: dm
+  recipients: [Kyle Chalmers]
+  chosen_from: tracker:reporter

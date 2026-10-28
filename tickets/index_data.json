@@ -1,1 +1,29 @@
-{"schema_version": 1, "tickets": []}
+{
+  "schema_version": 1,
+  "tickets": [
+    {
+      "id": "DATA-1",
+      "owner": "kyle",
+      "title": "Inventory value by supplier region",
+      "status": "Unknown",
+      "date": "2026-10-27",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "inventory-value",
+        "region-rollup"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION",
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP",
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION",
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.SUPPLIER"
+      ],
+      "summary": "Ranked all 5 regions by supplier inventory value (avail qty x supply cost): America 407.9B highest, Africa 392.1B lowest; total 2.004T, reconciled to the cent.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "75904ebe863530138d06a973f8815fcf328f9b146f64bb8fa33168733c72cd17",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-1"
+    }
+  ]
+}
