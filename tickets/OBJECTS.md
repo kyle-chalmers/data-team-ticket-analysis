@@ -4,7 +4,7 @@
 
 # Object Index
 
-**7 data objects** referenced across the ticket archive (4 shared by >1 ticket) — the reverse of `INDEX.md`.
+**8 data objects** referenced across the ticket archive (7 shared by >1 ticket) — the reverse of `INDEX.md`.
 
 > **For the agent:** before changing a view/table, grep here for every ticket that read or wrote it.
 
@@ -13,7 +13,8 @@
 | `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS` | [DATA-2](kyle/DATA-2/README.md), [DATA-3](kyle/DATA-3/README.md), [DATA-4](kyle/DATA-4/README.md), [DATA-5](kyle/DATA-5/README.md), [DATA-6](kyle/DATA-6/README.md), [DATA-10](kyle/DATA-10/README.md), [DATA-11](kyle/DATA-11/README.md) (7) |
 | `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER` | [DATA-4](kyle/DATA-4/README.md), [DATA-5](kyle/DATA-5/README.md), [DATA-9](kyle/DATA-9/README.md) (3) |
 | `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.LINEITEM` | [DATA-7](kyle/DATA-7/README.md), [DATA-8](kyle/DATA-8/README.md), [DATA-10](kyle/DATA-10/README.md) (3) |
-| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION` | [DATA-1](kyle/DATA-1/README.md), [DATA-9](kyle/DATA-9/README.md) (2) |
-| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP` | [DATA-1](kyle/DATA-1/README.md) (1) |
-| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION` | [DATA-1](kyle/DATA-1/README.md) (1) |
-| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.SUPPLIER` | [DATA-1](kyle/DATA-1/README.md) (1) |
+| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION` | [DATA-1](kyle/DATA-1/README.md), [DATA-9](kyle/DATA-9/README.md), [DATA-12](leslie/DATA-12/README.md) (3) |
+| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP` | [DATA-1](kyle/DATA-1/README.md), [DATA-12](leslie/DATA-12/README.md) (2) |
+| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION` | [DATA-1](kyle/DATA-1/README.md), [DATA-12](leslie/DATA-12/README.md) (2) |
+| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.SUPPLIER` | [DATA-1](kyle/DATA-1/README.md), [DATA-12](leslie/DATA-12/README.md) (2) |
+| `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PART` | [DATA-12](leslie/DATA-12/README.md) (1) |

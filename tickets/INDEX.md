@@ -4,18 +4,21 @@
 
 # Ticket Index
 
-**12 tickets** · Done 11 · To Do 1
+**12 tickets** · Done 12
 
 By owner: kyle 11 · leslie 1
 
-Coverage: 1 not yet enriched (▱). Run /refresh index to update.
+Coverage: 1 summary may be stale (⚠). Run /refresh index to update.
 
-Status: read from the tracker for 12 of 12 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
+Status: read from the tracker for 11 of 12 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
+
+Status set by /ship for 1 of 12 tickets: the status it moved the ticket to when the pull request merged. The next /refresh index reads it back from the tracker.
 
 > **For the agent:** this is the catalog of all prior ticket work in this repo. Before starting a ticket, grep here for earlier work on the same object / stakeholder / report — reuse it. `Refs` links related tickets. `⚠` = README changed since the summary was written; `▱` = summary auto-derived, not yet curated.
 
 | Ticket | Date | Status | Summary | Tags | Refs | Owner |
 |---|---|---|---|---|---|---|
+| [DATA-12](leslie/DATA-12/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-12) ⚠ | 2026-10-28 | Done | **Europe inventory value by part type** — Top 15 of 150 part types by Europe supplier inventory value: STANDARD ANODIZED TIN 2.99B highest; top 15 hold 43.7B (11.0%) of Europe's 397.9B, reconciled to DATA-1 to the cent. | `tpch` `inventory-value` `part-type` `europe` | DATA-1 | leslie |
 | [DATA-11](kyle/DATA-11/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-11) | 2026-10-28 | Done | **Orders per clerk for 1995** — Top 20 of 1,000 clerks by 1995 orders: Clerk#000000185 leads with 277; the top 20 handled 5,255 of 228,637 orders (2.3%); no tie at the cut-off (258 vs 257). | `tpch` `orders` `clerks` `top-n` | — | kyle |
 | [DATA-10](kyle/DATA-10/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-10) | 2026-10-28 | Done | **Discount impact on 1996 revenue** — 1996 line items by ship date: gross 34.97B, discounts 1.75B (5.00%), discounted 33.22B before tax across 913,487 items; identity reconciled to the cent. | `tpch` `lineitem` `revenue` `discounts` | — | kyle |
 | [DATA-9](kyle/DATA-9/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-9) | 2026-10-28 | Done | **Customer count by nation** — Counted all 150,000 customers across the 25 nations: each holds about 4%, INDONESIA most (6,161) and SAUDI ARABIA fewest (5,904); no orphan nation keys. | `tpch` `customers` `nation-breakdown` | — | kyle |
@@ -27,4 +30,3 @@ Status: read from the tracker for 12 of 12 tickets, oldest read 2026-10-28. The 
 | [DATA-3](kyle/DATA-3/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-3) | 2026-10-28 | Done | **Monthly order revenue for 1997** — 1997 order revenue (O_TOTALPRICE) by month: 34.37B across 227,783 orders, May highest (2.95B), Feb lowest (2.67B); reconciled to the whole-year total to the cent. | `tpch` `orders` `revenue` `monthly-trend` | — | kyle |
 | [DATA-2](kyle/DATA-2/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-2) | 2026-10-28 | Done | **Order count by order status** — Counted all 1.5M orders by status: Open 732,044 (48.80%), Fulfilled 729,413 (48.63%), Partially shipped 38,543 (2.57%); counts reconcile to ORDERS. | `tpch` `orders` `status-breakdown` | — | kyle |
 | [DATA-1](kyle/DATA-1/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-1) | 2026-10-27 | Done | **Inventory value by supplier region** — Ranked all 5 regions by supplier inventory value (avail qty x supply cost): America 407.9B highest, Africa 392.1B lowest; total 2.004T, reconciled to the cent. | `tpch` `inventory-value` `region-rollup` | — | kyle |
-| [DATA-12](leslie/DATA-12/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-12) ▱ | — | To Do | **Europe inventory value by part type** — For suppliers in Europe, break supplier inventory value (available quantity times supply cost from SNOWFLAKESAMPLEDATA.TPCHSF1.PARTSUPP) out by part type (PART.PTYPE). Top 15 part… | — | — | leslie |
