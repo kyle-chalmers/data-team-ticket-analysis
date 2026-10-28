@@ -2,6 +2,31 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-6",
+      "owner": "kyle",
+      "title": "Average order value by order priority",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "orders",
+        "average-order-value",
+        "priority-breakdown"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS"
+      ],
+      "summary": "Average order total by priority across 1.5M orders: all 5 sit near 151K (2-HIGH 151,553 highest, 4-NOT SPECIFIED 150,792 lowest), about 0.5% apart; revenue reconciled.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "e26bb92b491062e4644b1b3efeb10f15d616d017f55b7b9be1af91aee2250a23",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-6",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-5",
       "owner": "kyle",
       "title": "Customer count by market segment",

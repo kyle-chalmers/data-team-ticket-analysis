@@ -47,7 +47,7 @@ subagent_isolation: documented (not used: plan needs no spec)
 | 4-NOT SPECIFIED | 300,254 | 45,276,033,983.10 | 150,792.44 |
 | 5-LOW | 300,589 | 45,501,158,695.79 | 151,373.33 |
 
-The averages differ by at most 0.5% (2-HIGH highest, 4-NOT SPECIFIED lowest), so priority makes no real difference to order size in this data. Overall average: 151,219.54.
+The averages differ by about 0.5% at most (2-HIGH highest, 4-NOT SPECIFIED lowest), so priority makes no real difference to order size in this data. Overall average: 151,219.54.
 
 ## Quality Control
 *The `/review` verdict + pyramid results (counts/dedup, reconciliation, anti-patterns) — from
@@ -60,3 +60,5 @@ Build-time checks ([qc_queries/1_reconciliation.sql](qc_queries/1_reconciliation
 - Every average equals revenue / count within 0.01.
 - 5 output rows = 5 distinct priorities; no NULL priority.
 - CSV re-read: 5 data rows, header row 1, ASCII only.
+
+Review verdict: APPROVE ([qc_queries/2_review_verdict.md](qc_queries/2_review_verdict.md)); independent-subagent review, sign-off by Kyle Chalmers through the batch pre-approval on 2026-10-28.
