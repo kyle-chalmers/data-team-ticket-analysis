@@ -4,14 +4,17 @@
 
 # Ticket Index
 
-**1 tickets** · Done 1
+**2 tickets** · Done 1 · To Do 1
 
-By owner: kyle 1
+By owner: kyle 2
 
-Status: read from the tracker for 1 of 1 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
+Coverage: 1 not yet enriched (▱). Run /refresh index to update.
+
+Status: read from the tracker for 1 of 2 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
 
 > **For the agent:** this is the catalog of all prior ticket work in this repo. Before starting a ticket, grep here for earlier work on the same object / stakeholder / report — reuse it. `Refs` links related tickets. `⚠` = README changed since the summary was written; `▱` = summary auto-derived, not yet curated.
 
 | Ticket | Date | Status | Summary | Tags | Refs | Owner |
 |---|---|---|---|---|---|---|
 | [DATA-1](kyle/DATA-1/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-1) | 2026-10-27 | Done | **Inventory value by supplier region** — Ranked all 5 regions by supplier inventory value (avail qty x supply cost): America 407.9B highest, Africa 392.1B lowest; total 2.004T, reconciled to the cent. | `tpch` `inventory-value` `region-rollup` | — | kyle |
+| [DATA-2](kyle/DATA-2/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-2) ▱ | — | To Do | **Order count by order status** — How many orders are in each order status? Use SNOWFLAKESAMPLEDATA.TPCHSF1.ORDERS. | — | — | kyle |
