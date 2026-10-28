@@ -1,6 +1,6 @@
 # DATA-10: Discount impact on 1996 revenue
 
-`kyle` · To Do · 2026-10-28
+`kyle` · Done · 2026-10-28
 
 - **Objects:** [`SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.LINEITEM`](../objects/SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.LINEITEM.md), [`SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS`](../objects/SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS.md)
 - **Full ticket →** [README](../kyle/DATA-10/README.md)

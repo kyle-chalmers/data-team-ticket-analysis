@@ -20,11 +20,11 @@
       "summary": "Top 20 of 1,000 clerks by 1995 orders: Clerk#000000185 leads with 277; the top 20 handled 5,255 of 228,637 orders (2.3%); no tie at the cut-off (258 vs 257).",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "ad7d099d723ef72e678baaf51544130068c36422c23356b868b2338b3101b4b1",
+      "readme_hash": "1baca2fd843fd6f1ce4af5d9ecd4621e1ff82c27f5447aba07b873e6c446afac",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-11",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-10",
@@ -45,11 +45,11 @@
       "summary": "1996 line items by ship date: gross 34.97B, discounts 1.75B (5.00%), discounted 33.22B before tax across 913,487 items; identity reconciled to the cent.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "d04e72fef4ecffb568b6c9b674323009372babf9e440f0ee9556b4e8d1162858",
+      "readme_hash": "30937b570610f67142db6dad2302c9ede08cf17fcd9419ec9218b03fec60cbe6",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-10",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-9",
@@ -70,11 +70,11 @@
       "summary": "Counted all 150,000 customers across the 25 nations: each holds about 4%, INDONESIA most (6,161) and SAUDI ARABIA fewest (5,904); no orphan nation keys.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "9535799c3d129f2b8a3ea9b78d0a6965ac3dc1ed8542b2bf392c6a736b060b90",
+      "readme_hash": "f85db9f03f9f9c48021c39e3d7da10b66828450d285d7bcb3995983f0ca74e9c",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-9",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-8",
@@ -95,11 +95,11 @@
       "summary": "Returned line items (flag R) by ship mode: 1,478,870 of 6.0M (24.64%), RAIL most (211,640) and TRUCK least (210,876); modes within 0.1 point, about half of returnable items came back.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "ea73971db512011d8abd49653b3e0a9657b3ba61317e09c4d7566852df870e27",
+      "readme_hash": "0da29dc3b914870520ff1edc62a131d693a1946d59d656513339750cf00933b6",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-8",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-7",
@@ -120,11 +120,11 @@
       "summary": "Share of 6.0M line items received after commit date, by ship mode: 63.21% overall; all 7 modes within 0.17 points (MAIL 63.33% to RAIL 63.16%), so no mode stands out.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "d6bec99523713d17af5fb102da05679ee184de901aafb00d1c9eaaa2b0abf936",
+      "readme_hash": "1e320f074fe2746ce196602e2cc7da1a3a31dd6f8629f7b8a8d0a8ae343e0527",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-7",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-6",
@@ -145,11 +145,11 @@
       "summary": "Average order total by priority across 1.5M orders: all 5 sit near 151K (2-HIGH 151,553 highest, 4-NOT SPECIFIED 150,792 lowest), about 0.5% apart; revenue reconciled.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "e26bb92b491062e4644b1b3efeb10f15d616d017f55b7b9be1af91aee2250a23",
+      "readme_hash": "9f840231ddd2b4f87b049777126b583ba5d8566c602f7ceb4a4a59abceaccd60",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-6",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-5",
@@ -169,11 +169,11 @@
       "summary": "Counted all 150,000 customers by market segment: a near-even split, HOUSEHOLD largest (30,189, 20.13%) and AUTOMOBILE smallest (29,752, 19.83%); 50,004 have no orders.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "aaad9eaf6796dd44dca6e7d7d877492223273df90503afd176229d0d693261fd",
+      "readme_hash": "56e13db10de6429ea975d66decd3eed18f9a0b0f610204c7cefa1cc0f2d8d718",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-5",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-4",
@@ -195,11 +195,11 @@
       "summary": "Top 10 customers by all-time order revenue with segment: #143500 (FURNITURE) leads at 7.01M; the 10 total 63.9M and AUTOMOBILE holds 4 places; no tie at the cut-off.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "0e7b2db7227734571413438968ac60a45abb7178e3c6dec0d253767c1049b4d5",
+      "readme_hash": "af5169c87c2460eee0c5a335ac92783f9aa8a7b33e96c78d0537d27a59325f61",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-4",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-3",
@@ -220,11 +220,11 @@
       "summary": "1997 order revenue (O_TOTALPRICE) by month: 34.37B across 227,783 orders, May highest (2.95B), Feb lowest (2.67B); reconciled to the whole-year total to the cent.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "f3ee339e3317faeeded724e469ce3bfdc6f9fbf86ef0fe1db67342dabfc0cc77",
+      "readme_hash": "bbc563c417fcd032847b5bb75348c858da5aecbc210e0c35287bb70c8c26116a",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-3",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-2",
@@ -244,11 +244,11 @@
       "summary": "Counted all 1.5M orders by status: Open 732,044 (48.80%), Fulfilled 729,413 (48.63%), Partially shipped 38,543 (2.57%); counts reconcile to ORDERS.",
       "confidence": "medium",
       "readme_present": true,
-      "readme_hash": "d2351c8ed378a2768af47e422d7faf0e30e8dd3307497a8e8084896e7fe1d6e0",
+      "readme_hash": "7cab26c076e888afc41551b0cf5ea5c883e20a7457a5379c2b053bb80f687eb4",
       "ticket_url": "https://kclabs.atlassian.net/browse/DATA-2",
-      "tracker_status": "To Do",
+      "tracker_status": "Done",
       "tracker_status_read": "2026-10-28",
-      "readme_status_at_read": "To Do"
+      "readme_status_at_read": "Done"
     },
     {
       "id": "DATA-1",
