@@ -6,3 +6,7 @@ chat:
   kind: dm
   recipients: [Kyle Chalmers]
   chosen_from: tracker:reporter
+delivered:
+  - file: "final_deliverables/1_inventory_value_by_region_5_records.csv"
+    docstore_target: null
+    url: "https://drive.google.com/file/d/1YKi5dIMJKdtCYK_1lANNrWE77n5937-P"
