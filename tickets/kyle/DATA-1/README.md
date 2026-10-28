@@ -32,7 +32,7 @@ subagent_isolation: documented (not used: plan needs no spec)
    - **Reasoning**: the path named in the request.
    - **Context**: no NULL keys and no orphaned suppliers were found.
    - **Impact**: every PARTSUPP row maps to exactly one region.
-4. **Output Format**: CSV columns `rank, region_name, inventory_value`; value rounded to 2 decimals; ties would break by region name (none occur).
+4. **Output Format**: CSV columns `rank, region_name, inventory_value`; value rounded to 2 decimals; tied regions would share a rank and sort by region name (no ties occur). The CSV header is lowercased after export (Snowflake returns it uppercase); data rows are otherwise exactly the SQL output.
    - **Reasoning**: requester's answer during scoping; TPCH has no currency field, so the value is unitless.
    - **Context**: the five regions sit within about 4% of each other.
    - **Impact**: the ranking is a straight sort on the summed value.
