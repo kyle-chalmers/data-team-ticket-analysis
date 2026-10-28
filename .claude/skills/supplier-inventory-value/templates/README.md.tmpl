@@ -1,0 +1,41 @@
+# {{ticket}}: {{title}}
+
+## Ticket Information
+- **Link:** {{ticket_url}}
+- **Type:** {{type}}
+- **Status:** {{status}}
+- **Assignee:** {{assignee}}
+- **Warehouse target(s):** SNOWFLAKE_SAMPLE_DATA.TPCH_SF1 (read-only)
+
+## Business Context
+{{business_context}}
+
+## Investigation Scope
+Supplier inventory value rolled up by {{group_by}}, scope {{region_scope}}, {{top_n_scope}}. Produced by
+`/supplier-inventory-value {{invocation}}`, the skill built from kyle/DATA-1 and leslie/DATA-12.
+Objects (read-only): `SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP` joined to `PART`, `SUPPLIER`, `NATION`, `REGION`.
+
+## Assumptions Made
+1. **Business Definition**: inventory value = `PS_AVAILQTY * PS_SUPPLYCOST`, summed per group. Supply-cost
+   value, not retail; TPCH has no currency, so values are unitless.
+2. **Population Filter**: rows with `PS_AVAILQTY > 0` only (matches DATA-1); {{region_assumption}}
+3. **Data Interpretation**: a supplier's region and nation follow `SUPPLIER.S_NATIONKEY` -> `NATION` ->
+   `REGION`; "part type" is the full `PART.P_TYPE` value.
+4. **Output Format**: CSV columns `rank, {{group_label}}, inventory_value`; value rounded to 2 decimals;
+   ties share a rank and sort by group name; the header is lowercased after export.
+5. **Scope/Time Window**: a point-in-time snapshot; `PARTSUPP` has no date column.
+{{extra_assumptions}}
+
+## Deliverables
+1. [final_deliverables/{{csv_name}}](final_deliverables/{{csv_name}}) - {{deliverable_description}}
+2. [final_deliverables/{{sql_name}}](final_deliverables/{{sql_name}}) - the query behind it.
+
+{{results_table}}
+
+{{results_summary}}
+
+## Quality Control
+Build-time checks ([qc_queries/1_reconciliation.sql](qc_queries/1_reconciliation.sql)):
+{{qc_results}}
+
+Review verdict: {{review_verdict}}

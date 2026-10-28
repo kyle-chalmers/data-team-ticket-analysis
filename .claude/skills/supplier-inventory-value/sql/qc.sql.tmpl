@@ -1,0 +1,86 @@
+-- QC checkpoint for supplier-inventory-value: validation pyramid layers 2-3.
+-- One row per check: check_name, tier, expected, actual, pass. bin/run.sh halts on any
+-- hard-halt row with pass = FALSE and surfaces warn rows. Same parameters as the step SQL,
+-- described in prose there. No tokens in comments; string tokens are quoted.
+WITH params AS (
+    SELECT '{{group_by}}' AS group_by,
+           '{{region_filter}}' AS region_filter,
+           TO_NUMBER('{{top_n}}') AS top_n
+),
+all_ps AS (
+    SELECT COUNT(*) AS n_all, COUNT_IF(PS_AVAILQTY > 0) AS n_pos
+    FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP
+),
+chain AS (
+    -- every PARTSUPP row, through SUPPLIER, NATION, REGION, no filters
+    SELECT COUNT(*) AS n_chain
+    FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP ps
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.SUPPLIER s ON ps.PS_SUPPKEY = s.S_SUPPKEY
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION n ON s.S_NATIONKEY = n.N_NATIONKEY
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION r ON n.N_REGIONKEY = r.R_REGIONKEY
+),
+scope AS (
+    -- rows in scope before the PART join
+    SELECT ps.PS_PARTKEY, ps.PS_SUPPKEY, r.R_NAME, n.N_NAME,
+           ps.PS_AVAILQTY * ps.PS_SUPPLYCOST AS v
+    FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP ps
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.SUPPLIER s ON ps.PS_SUPPKEY = s.S_SUPPKEY
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION n ON s.S_NATIONKEY = n.N_NATIONKEY
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION r ON n.N_REGIONKEY = r.R_REGIONKEY
+    CROSS JOIN params
+    WHERE (params.region_filter = 'ALL' OR r.R_NAME = params.region_filter)
+      AND ps.PS_AVAILQTY > 0
+),
+scope_typed AS (
+    SELECT scope.*, p.P_TYPE
+    FROM scope JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PART p ON scope.PS_PARTKEY = p.P_PARTKEY
+),
+by_group AS (
+    SELECT CASE params.group_by
+               WHEN 'region' THEN R_NAME
+               WHEN 'nation' THEN N_NAME
+               WHEN 'part_type' THEN P_TYPE
+           END AS g,
+           SUM(v) AS v
+    FROM scope_typed CROSS JOIN params
+    GROUP BY 1
+),
+ranked AS (
+    SELECT g, v, ROW_NUMBER() OVER (ORDER BY v DESC, g) AS rn FROM by_group
+),
+checks AS (
+    SELECT 1 AS n, 'region filter matches a REGION row' AS check_name, 'hard-halt' AS tier,
+           1 AS expected,
+           (SELECT IFF(params.region_filter = 'ALL', 1,
+                       (SELECT COUNT(*) FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION WHERE R_NAME = params.region_filter))
+            FROM params) AS actual
+    UNION ALL
+    SELECT 2, 'supplier-nation-region joins keep every PARTSUPP row', 'hard-halt',
+           (SELECT n_all FROM all_ps), (SELECT n_chain FROM chain)
+    UNION ALL
+    SELECT 3, 'PART join keeps every in-scope row', 'hard-halt',
+           (SELECT COUNT(*) FROM scope), (SELECT COUNT(*) FROM scope_typed)
+    UNION ALL
+    SELECT 4, 'grain unique (part, supplier)', 'hard-halt',
+           (SELECT COUNT(*) FROM scope), (SELECT COUNT(DISTINCT PS_PARTKEY, PS_SUPPKEY) FROM scope)
+    UNION ALL
+    -- COUNT(DISTINCT) skips NULL, so a NULL group also makes actual < expected
+    SELECT 5, 'one row per group, no NULL group', 'hard-halt',
+           (SELECT COUNT(*) FROM by_group), (SELECT COUNT(DISTINCT g) FROM by_group)
+    UNION ALL
+    SELECT 6, 'sum over groups = in-scope total (to the cent)', 'hard-halt',
+           (SELECT ROUND(SUM(v), 2) FROM scope), (SELECT ROUND(SUM(v), 2) FROM by_group)
+    UNION ALL
+    SELECT 7, 'no tie straddles the top-n cut', 'hard-halt',
+           1,
+           (SELECT IFF(params.top_n = 0 OR params.top_n >= (SELECT COUNT(*) FROM ranked)
+                       OR (SELECT v FROM ranked WHERE rn = params.top_n)
+                          <> (SELECT v FROM ranked WHERE rn = params.top_n + 1), 1, 0)
+            FROM params)
+    UNION ALL
+    SELECT 8, 'zero-quantity filter removes no rows', 'warn',
+           (SELECT n_all FROM all_ps), (SELECT n_pos FROM all_ps)
+)
+SELECT check_name, tier, expected, actual, expected = actual AS pass
+FROM checks
+ORDER BY n;

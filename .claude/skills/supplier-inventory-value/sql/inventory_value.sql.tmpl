@@ -1,0 +1,40 @@
+-- Supplier inventory value (PS_AVAILQTY * PS_SUPPLYCOST) rolled up by one dimension.
+-- Built from kyle/DATA-1 (by region, all rows) and leslie/DATA-12 (EUROPE, by part type, top 15).
+-- Parameters, described in prose (tokens never go in comments):
+--   group_by      region | nation | part_type  (picks the grouped column)
+--   group_label   output column name; set by bin/run.sh from group_by, never typed by hand
+--   region_filter one REGION.R_NAME, or ALL for every region
+--   top_n         keep the top N rows by value, tie-broken by group name; 0 keeps every row
+-- Grain: one row per group. Ties share a rank. Zero-quantity rows are excluded (matches DATA-1).
+WITH params AS (
+    SELECT '{{group_by}}' AS group_by,
+           '{{region_filter}}' AS region_filter,
+           TO_NUMBER('{{top_n}}') AS top_n
+),
+by_group AS (
+    SELECT
+        CASE params.group_by
+            WHEN 'region' THEN r.R_NAME
+            WHEN 'nation' THEN n.N_NAME
+            WHEN 'part_type' THEN p.P_TYPE
+        END AS group_value,
+        SUM(ps.PS_AVAILQTY * ps.PS_SUPPLYCOST) AS inventory_value
+    FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PARTSUPP ps
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.PART p ON ps.PS_PARTKEY = p.P_PARTKEY
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.SUPPLIER s ON ps.PS_SUPPKEY = s.S_SUPPKEY
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION n ON s.S_NATIONKEY = n.N_NATIONKEY
+    JOIN SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.REGION r ON n.N_REGIONKEY = r.R_REGIONKEY
+    CROSS JOIN params
+    WHERE (params.region_filter = 'ALL' OR r.R_NAME = params.region_filter)
+      AND ps.PS_AVAILQTY > 0
+    GROUP BY 1
+)
+SELECT
+    RANK() OVER (ORDER BY inventory_value DESC) AS rank,
+    group_value AS {{group_label}},
+    ROUND(inventory_value, 2) AS inventory_value
+FROM by_group
+CROSS JOIN params
+QUALIFY params.top_n = 0
+     OR ROW_NUMBER() OVER (ORDER BY inventory_value DESC, group_value) <= params.top_n
+ORDER BY inventory_value DESC, group_value;

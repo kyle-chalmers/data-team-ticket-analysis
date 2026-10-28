@@ -1,0 +1,14 @@
+{
+  "_comment": "Golden replay of kyle/DATA-1: all regions, grouped by region, every row.",
+  "built_from": "kyle/DATA-1",
+  "invocation": "--ticket DATA-1 --group-by region",
+  "expect": {
+    "row_count": 5,
+    "distinct_groups": 5,
+    "dup_count": 0,
+    "totals": { "inventory_value": 2003609409006.92 },
+    "qc": { "hard_halt_checks": "PASS", "warn_checks": [] }
+  },
+  "reference_output": "tickets/kyle/DATA-1/final_deliverables/1_inventory_value_by_region_5_records.csv",
+  "assert": "Export is byte-identical to reference_output."
+}

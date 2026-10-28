@@ -1,0 +1,14 @@
+{
+  "_comment": "Golden replay of leslie/DATA-12: EUROPE suppliers, grouped by part type, top 15.",
+  "built_from": "leslie/DATA-12",
+  "invocation": "--ticket DATA-12 --group-by part_type --region EUROPE --top-n 15",
+  "expect": {
+    "row_count": 15,
+    "distinct_groups": 15,
+    "dup_count": 0,
+    "totals": { "inventory_value": 43689988041.29, "europe_total": 397934639557.59 },
+    "qc": { "hard_halt_checks": "PASS", "warn_checks": [] }
+  },
+  "reference_output": "tickets/leslie/DATA-12/final_deliverables/1_europe_inventory_value_by_part_type_15_records.csv",
+  "assert": "Export is byte-identical to reference_output."
+}
