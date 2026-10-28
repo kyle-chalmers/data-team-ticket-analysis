@@ -2,6 +2,31 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-7",
+      "owner": "kyle",
+      "title": "Late shipments by ship mode",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "lineitem",
+        "shipping",
+        "on-time-delivery"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.LINEITEM"
+      ],
+      "summary": "Share of 6.0M line items received after commit date, by ship mode: 63.21% overall; all 7 modes within 0.17 points (MAIL 63.33% to RAIL 63.16%), so no mode stands out.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "d6bec99523713d17af5fb102da05679ee184de901aafb00d1c9eaaa2b0abf936",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-7",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-6",
       "owner": "kyle",
       "title": "Average order value by order priority",

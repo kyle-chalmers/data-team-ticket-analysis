@@ -4,16 +4,17 @@
 
 # Ticket Index
 
-**6 tickets** · Done 1 · To Do 5
+**7 tickets** · Done 1 · To Do 6
 
-By owner: kyle 6
+By owner: kyle 7
 
-Status: read from the tracker for 6 of 6 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
+Status: read from the tracker for 7 of 7 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
 
 > **For the agent:** this is the catalog of all prior ticket work in this repo. Before starting a ticket, grep here for earlier work on the same object / stakeholder / report — reuse it. `Refs` links related tickets. `⚠` = README changed since the summary was written; `▱` = summary auto-derived, not yet curated.
 
 | Ticket | Date | Status | Summary | Tags | Refs | Owner |
 |---|---|---|---|---|---|---|
+| [DATA-7](kyle/DATA-7/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-7) | 2026-10-28 | To Do | **Late shipments by ship mode** — Share of 6.0M line items received after commit date, by ship mode: 63.21% overall; all 7 modes within 0.17 points (MAIL 63.33% to RAIL 63.16%), so no mode stands out. | `tpch` `lineitem` `shipping` `on-time-delivery` | — | kyle |
 | [DATA-6](kyle/DATA-6/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-6) | 2026-10-28 | To Do | **Average order value by order priority** — Average order total by priority across 1.5M orders: all 5 sit near 151K (2-HIGH 151,553 highest, 4-NOT SPECIFIED 150,792 lowest), about 0.5% apart; revenue reconciled. | `tpch` `orders` `average-order-value` `priority-breakdown` | — | kyle |
 | [DATA-5](kyle/DATA-5/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-5) | 2026-10-28 | To Do | **Customer count by market segment** — Counted all 150,000 customers by market segment: a near-even split, HOUSEHOLD largest (30,189, 20.13%) and AUTOMOBILE smallest (29,752, 19.83%); 50,004 have no orders. | `tpch` `customers` `segment-breakdown` | — | kyle |
 | [DATA-4](kyle/DATA-4/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-4) | 2026-10-28 | To Do | **Top 10 customers by order revenue** — Top 10 customers by all-time order revenue with segment: #143500 (FURNITURE) leads at 7.01M; the 10 total 63.9M and AUTOMOBILE holds 4 places; no tie at the cut-off. | `tpch` `orders` `customers` `top-n` | — | kyle |
