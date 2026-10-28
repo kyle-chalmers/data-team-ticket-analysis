@@ -2,6 +2,31 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-3",
+      "owner": "kyle",
+      "title": "Monthly order revenue for 1997",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "orders",
+        "revenue",
+        "monthly-trend"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS"
+      ],
+      "summary": "1997 order revenue (O_TOTALPRICE) by month: 34.37B across 227,783 orders, May highest (2.95B), Feb lowest (2.67B); reconciled to the whole-year total to the cent.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "f3ee339e3317faeeded724e469ce3bfdc6f9fbf86ef0fe1db67342dabfc0cc77",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-3",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-2",
       "owner": "kyle",
       "title": "Order count by order status",
