@@ -4,9 +4,14 @@
 
 # Ticket Index
 
-**0 tickets**
+**1 tickets** · To Do 1
+
+By owner: kyle 1
+
+Coverage: 1 not yet enriched (▱). Run /refresh index to update.
 
 > **For the agent:** this is the catalog of all prior ticket work in this repo. Before starting a ticket, grep here for earlier work on the same object / stakeholder / report — reuse it. `Refs` links related tickets. `⚠` = README changed since the summary was written; `▱` = summary auto-derived, not yet curated.
 
 | Ticket | Date | Status | Summary | Tags | Refs | Owner |
 |---|---|---|---|---|---|---|
+| [DATA-1](kyle/DATA-1/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-1) ▱ | — | To Do | **Inventory value by supplier region** — Which regions hold the most supplier inventory value? I want to see a complete list of the regions ordered from the highest value to the lowest value. | — | — | kyle |
