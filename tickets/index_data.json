@@ -2,6 +2,32 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-4",
+      "owner": "kyle",
+      "title": "Top 10 customers by order revenue",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "orders",
+        "customers",
+        "top-n"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.CUSTOMER",
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.ORDERS"
+      ],
+      "summary": "Top 10 customers by all-time order revenue with segment: #143500 (FURNITURE) leads at 7.01M; the 10 total 63.9M and AUTOMOBILE holds 4 places; no tie at the cut-off.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "0e7b2db7227734571413438968ac60a45abb7178e3c6dec0d253767c1049b4d5",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-4",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-3",
       "owner": "kyle",
       "title": "Monthly order revenue for 1997",
