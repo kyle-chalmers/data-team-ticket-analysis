@@ -2,6 +2,31 @@
   "schema_version": 1,
   "tickets": [
     {
+      "id": "DATA-8",
+      "owner": "kyle",
+      "title": "Returned items by ship mode",
+      "status": "Unknown",
+      "date": "2026-10-28",
+      "cross_refs": [],
+      "tags": [
+        "tpch",
+        "lineitem",
+        "shipping",
+        "returns"
+      ],
+      "objects": [
+        "SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.LINEITEM"
+      ],
+      "summary": "Returned line items (flag R) by ship mode: 1,478,870 of 6.0M (24.64%), RAIL most (211,640) and TRUCK least (210,876); modes within 0.1 point, about half of returnable items came back.",
+      "confidence": "medium",
+      "readme_present": true,
+      "readme_hash": "ea73971db512011d8abd49653b3e0a9657b3ba61317e09c4d7566852df870e27",
+      "ticket_url": "https://kclabs.atlassian.net/browse/DATA-8",
+      "tracker_status": "To Do",
+      "tracker_status_read": "2026-10-28",
+      "readme_status_at_read": "To Do"
+    },
+    {
       "id": "DATA-7",
       "owner": "kyle",
       "title": "Late shipments by ship mode",

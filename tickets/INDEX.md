@@ -8,14 +8,13 @@
 
 By owner: kyle 8
 
-Coverage: 1 not yet enriched (▱). Run /refresh index to update.
-
-Status: read from the tracker for 7 of 8 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
+Status: read from the tracker for 8 of 8 tickets, oldest read 2026-10-28. The rest show the curated summary's status or the ticket README's.
 
 > **For the agent:** this is the catalog of all prior ticket work in this repo. Before starting a ticket, grep here for earlier work on the same object / stakeholder / report — reuse it. `Refs` links related tickets. `⚠` = README changed since the summary was written; `▱` = summary auto-derived, not yet curated.
 
 | Ticket | Date | Status | Summary | Tags | Refs | Owner |
 |---|---|---|---|---|---|---|
+| [DATA-8](kyle/DATA-8/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-8) | 2026-10-28 | To Do | **Returned items by ship mode** — Returned line items (flag R) by ship mode: 1,478,870 of 6.0M (24.64%), RAIL most (211,640) and TRUCK least (210,876); modes within 0.1 point, about half of returnable items came back. | `tpch` `lineitem` `shipping` `returns` | — | kyle |
 | [DATA-7](kyle/DATA-7/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-7) | 2026-10-28 | To Do | **Late shipments by ship mode** — Share of 6.0M line items received after commit date, by ship mode: 63.21% overall; all 7 modes within 0.17 points (MAIL 63.33% to RAIL 63.16%), so no mode stands out. | `tpch` `lineitem` `shipping` `on-time-delivery` | — | kyle |
 | [DATA-6](kyle/DATA-6/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-6) | 2026-10-28 | To Do | **Average order value by order priority** — Average order total by priority across 1.5M orders: all 5 sit near 151K (2-HIGH 151,553 highest, 4-NOT SPECIFIED 150,792 lowest), about 0.5% apart; revenue reconciled. | `tpch` `orders` `average-order-value` `priority-breakdown` | — | kyle |
 | [DATA-5](kyle/DATA-5/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-5) | 2026-10-28 | To Do | **Customer count by market segment** — Counted all 150,000 customers by market segment: a near-even split, HOUSEHOLD largest (30,189, 20.13%) and AUTOMOBILE smallest (29,752, 19.83%); 50,004 have no orders. | `tpch` `customers` `segment-breakdown` | — | kyle |
@@ -23,4 +22,3 @@ Status: read from the tracker for 7 of 8 tickets, oldest read 2026-10-28. The re
 | [DATA-3](kyle/DATA-3/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-3) | 2026-10-28 | To Do | **Monthly order revenue for 1997** — 1997 order revenue (O_TOTALPRICE) by month: 34.37B across 227,783 orders, May highest (2.95B), Feb lowest (2.67B); reconciled to the whole-year total to the cent. | `tpch` `orders` `revenue` `monthly-trend` | — | kyle |
 | [DATA-2](kyle/DATA-2/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-2) | 2026-10-28 | To Do | **Order count by order status** — Counted all 1.5M orders by status: Open 732,044 (48.80%), Fulfilled 729,413 (48.63%), Partially shipped 38,543 (2.57%); counts reconcile to ORDERS. | `tpch` `orders` `status-breakdown` | — | kyle |
 | [DATA-1](kyle/DATA-1/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-1) | 2026-10-27 | Done | **Inventory value by supplier region** — Ranked all 5 regions by supplier inventory value (avail qty x supply cost): America 407.9B highest, Africa 392.1B lowest; total 2.004T, reconciled to the cent. | `tpch` `inventory-value` `region-rollup` | — | kyle |
-| [DATA-8](kyle/DATA-8/README.md) [↗](https://kclabs.atlassian.net/browse/DATA-8) ▱ | — | To Do | **Returned items by ship mode** — Count of returned line items (LRETURNFLAG = 'R') by ship mode from SNOWFLAKESAMPLEDATA.TPCHSF1.LINEITEM. | — | — | kyle |
